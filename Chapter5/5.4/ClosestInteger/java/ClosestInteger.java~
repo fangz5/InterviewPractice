@@ -1,0 +1,11 @@
+public class ClosestInteger {
+    public static int ClosestIneger(int x) {
+	return x^(x&~(x-1))^(~x&~(~x-1));
+    }
+
+    public static void main(String[] args) {
+	int x = 0xF02FF;
+	System.out.println("bf:"+Integer.toBinaryString(x));
+	System.out.println("af:"+Integer.toBinaryString(ClosestInteger(x)));
+    }
+}
