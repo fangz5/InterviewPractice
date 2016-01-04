@@ -1,0 +1,15 @@
+package SwapBits;
+
+public class SwapBits {
+    static public long SwapBits(long x, int i, int j) {
+	return x^(1L<<i)^(1L<<j);
+    }
+
+    static public void main(String[] argv) {
+	long x = 0xF0F1;
+	int i=2;
+	int j=10;
+	System.out.println("Before:" + Long.toBinaryString(x));
+	System.out.println("After:" + Long.toBinaryString(SwapBits(x,i,j)));
+    }
+}

@@ -1,0 +1,17 @@
+public class parity {
+    static public short parity(long x) {
+	x ^= x>>32;
+	x ^= x>>16;
+	x ^= x>>8;
+	x ^= x>>4;
+	x ^= x>>2;
+	x ^= x>>1;
+	return x&1;
+    }
+
+    public static void main() {
+	long x = 0xFF000011;
+	System.out.println("Type long has " + Long.size(x) + " bits.";
+	System.out.println(Integer.toBinaryString(x) + " has parity " + parity(x));
+    }
+}

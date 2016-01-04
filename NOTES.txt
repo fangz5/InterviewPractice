@@ -1,0 +1,2 @@
+x&(x-1): clear last bit
+x&~(x-1): get last bit
