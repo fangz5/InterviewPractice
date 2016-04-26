@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+class Stack{
+private:
+  stack<int> elements;
+  stack<pair<int,int>> max_count;
+public:
+  Stack(){
+
+  }
+  int pop(){
+
+  }
+  void push(const int& num){
+    
+  }
+  bool empty(){
+
+  }
+  int getMax(){
+
+  }
+};
+
+int main(){
+  Stack myStack;
+  return 0;
+}

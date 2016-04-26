@@ -1,0 +1,46 @@
+#include <iostream>
+
+Template <typename T>
+struct ListNode {
+  T data;
+  shared_ptr<ListNode<T>> next;
+};
+
+shared_ptr<ListNode<int>> MergeLists(shared_ptr<ListNode<int>> l1, shared_ptr<ListNode<int>> l2) {
+  shared_ptr<ListNode<int>> result = NULL;
+  //Check if any list is NULL.
+  if (l1 == NULL) {
+    result = l2;
+    return;
+  } else if (l2 == NULL) {
+    result = l1;
+    return;
+  }
+  //Set ptr to resulting list.
+  if (l1->data < l2->data) {
+    result = l1;
+    l1 = l1->next;
+  } else {
+    result = l2;
+    l2 = l2->next;
+  }
+
+  shared_ptr<ListNode<int>> current = result;
+  //Add nodes to resulting list.
+  while ( (l1!=NULL)&&(l2!=NULL) ) {
+    if (l1->data < l2->data) {
+      current->next = l1;
+      l1 = l1->next;
+    } else {
+      current->next = l2;
+      l2 = l2->next;
+    }
+  }
+  if (l1 == NULL) {
+    current->next = l2;
+  } else {
+    current->next = l1;
+  }
+
+  return result;
+

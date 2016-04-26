@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int firstBitPos(unsigned x){
+  if (x == 0) return -1;
+  int result = 0;
+  while (x != 1) {
+    x >>= 1;
+    result++;
+  }
+  return result;
+}
+
+int div(unsigned x, unsigned y){
+  int power=firstBitPos(x)-firstBitPos(y);
+  int result=0;
+  while (x>=y) {
+    int denominator = (y<<power);
+    if (x>=denominator) {
+      x -= denominator;
+      result += (1<<power);
+    }
+    power--;
+  }
+  return result;
+}
+
+int main(){
+  unsigned x,y;
+  cin>>x; cin>>y;
+  if (y<=0) return -1;
+  cout<<div(x,y)<<endl;
+
+  return 0;
+}

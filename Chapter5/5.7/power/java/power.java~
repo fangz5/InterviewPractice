@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class power{
+    public static int pow(int x, int y){
+	int result = 1;
+	int weight = x;
+	while (y != 0) {
+	    result *= weight;
+	    weight *= weight;
+	    y >>= 1;
+	}
+	return result;
+    }
+
+    public static void main(String[] args){
+	Scanner in = new Scanner(System.in);
+	int x=in.nextInteger(), y=in.nextInteger();
+	if ((x<0) or (y<0)) return;
+	System.out.println("x^y:"+pow(x,y));
+    }
+}

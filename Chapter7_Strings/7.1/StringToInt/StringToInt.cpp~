@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+
+//In this code, format checking is ignored.
+
+bool StringToInt(const string& strNum, int &intNum){
+  int sign = 1;
+  intNum = 0;
+  if (strNum[0] == '-') sign = -1;
+  for (int i = sign == 1?0:1; i<strNum.size(); i++) {
+    intNum = intNum * 10 + strNum[i];
+  }
+  intNum *= sign;
+
+  return true;
+}
+
+bool IntToString(int intNum, string& strNum){
+  strNum.clear();
+  int sign = 1;
+  if (intNum < 0) {
+    sign = -1;
+    intNum = -intNum;
+  }
+  while (intNum > 0) {
+    int lastDigit = intNum%10;
+    intNum = intNum/10;
+    strNum = (char)('0'+lastDigit)+strNum;
+  }
+  if (sign == -1) strNum = '-'+strNum;
+  
+  return true;
+}
+
+int main(){
+  for (int i=-1000; i<1000; i+=125) {
+    string myString;
+    int myInt;
+    IntToString(i,myString);
+    StringToInt(myString,myInt);
+    cout<<"i:"<<i<<"\t myInt:"<<myInt<<endl;
+  }
+}

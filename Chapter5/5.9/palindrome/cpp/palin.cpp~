@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+
+bool isPalin(int x){
+  if (x<0) return false;
+  if (x==0) return true;
+
+  int mostSigDigit = static_cast<int>(log10(x));
+  while (x>9) {
+    int leftDigit = x>>mostSigDigit;
+    int rightDigit = x%10;
+    if (leftDigit != rightDigit) return false;
+    x <<= 33-mostSigDigit;
+    x >>= 34-mostSigDigit;
+    mostSigDigit -= 2;
+  }
+  return true;
+}
+
+int main(){
+  using namespace std;
+  while (1) {
+    int x;
+    cin<<x;
+    if (x==-1) return 0;
+    if (isPalin(x)){ 
+      cout<<"true"<<endl;
+    }else{
+      cout<<"false"<<endl;
+    }    
+  }
+}
