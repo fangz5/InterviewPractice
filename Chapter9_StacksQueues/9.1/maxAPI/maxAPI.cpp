@@ -16,17 +16,21 @@ private:
   stack<pair<int,int> > max_count_;
 public:
   void pop(){
-    if (max_count_.top().second > 1) {
-      max_count_.top().second -= 1;
+    if (empty()) {
+      throw length_error("pop(): empty stack");
     } else {
-      max_count_.pop();
-    }
+      elements_.pop();
+      if (max_count_.top().second > 1) {
+        max_count_.top().second -= 1;
+      } else {
+        max_count_.pop();
+      }
+    }       
   }
   void push(const int& num){
     elements_.push(num);
-    //    max_count_.push(make_pair(num,1));
-    cout<<"ok"<<endl;
-    if (empty()) {
+//    cout<<"ok"<<endl;
+    if (max_count_.empty()) {
       //Init.
       max_count_.push(make_pair(num,1));
       cout<<"init"<<endl;
