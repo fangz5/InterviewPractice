@@ -1,0 +1,34 @@
+#include <iostream>
+#include <queue>
+#include <vector>
+
+using namespace std;
+
+struct HeapNode {
+  int vectorIndex;
+  int tradeIndex;
+  int tradeTime;
+}
+
+void MergedSort(const vector<vector<int> > vectors, vector<int> &result){
+  //Init
+  result.clear();
+  //Build min_heap
+  priority_queue<HeapNode> min_heap;
+  for (int i=0; i<vectors.size(); i++) {
+    if (!vectors[i].empty()) {
+      HeapNode newNode;
+      newNode.vectorIndex = i;
+      newNode.tradeIndex = 0;
+      newNode.tradeTime = vectors[i].at[0];
+      min_heap.push(newNode);
+    }
+  }  
+
+  //Store result.
+
+}
+
+int main(){
+  return 0;
+}

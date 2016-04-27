@@ -1,0 +1,29 @@
+#include <iostream>
+#include <vector>
+
+void Intersect(const vector<int>& A, const vector<int>& B, vector<int>& result){
+  //Init.
+  result.clear();
+  if ( (A.empty)||(B.empty()) return;
+  int index_A = 0, index_B = 0;
+
+  while ( (index_A < A.size())&&(index_B < B.size()) ){
+    if (A[index_A] < B[index_B]) {
+      index_A++;
+    }else if (A[index_A] > B[index_B]){
+      index_B++;
+    }else{
+      if (result.empty()) {
+	result.push_back(A[index_A]);
+      }else if (A[index_A] > result[result.size()-1]) {
+	result.push_back(A[index_A]);
+      }
+      index_A++;
+      index_B++;
+    }
+  }
+}
+
+int main(){
+
+}

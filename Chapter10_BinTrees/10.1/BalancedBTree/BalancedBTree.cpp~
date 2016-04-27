@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;
+
+template <typename T>
+struct BinaryTreeNode{
+  T data;
+  BinaryTreeNode* left = NULL, right = NULL;
+};
+
+int main(){
+  return 0;
+}
