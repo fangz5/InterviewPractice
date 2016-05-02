@@ -1,0 +1,11 @@
+#include <cstdint>
+#include <iostream>
+
+struct Node{
+  int16_t data;
+  Node* next;
+};
+
+int main(){
+
+}

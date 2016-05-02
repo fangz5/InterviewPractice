@@ -1,0 +1,10 @@
+#include <string>
+#include <iostream>
+
+int main(){
+  string input = "Today is Friday.";
+  string token;
+  while (std::getline(input,token,',')){
+    std::cout<<token<<endl;
+  }
+}
