@@ -1,0 +1,19 @@
+#include <cstdint>
+#include <iostream>
+
+using namespace std;
+
+template<type T>
+struct Node{
+  T data;
+  Node* left = NULL;
+  Node* right = NULL;
+};
+
+bool IsSymTree(const Node<int32_t>& root){
+  return true;
+}
+
+int main(){
+
+}

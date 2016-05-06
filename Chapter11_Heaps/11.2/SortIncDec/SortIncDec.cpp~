@@ -1,0 +1,29 @@
+#include <priority_queue>
+#include <vector>
+#include <iostream>
+#include <cstdint>
+
+using namespace std;
+
+enum MONOTONICITY {INC, DEC};
+
+template<typename T>
+class MonoInterval{
+public:
+  vector<T>* data;
+  int32_t begin;
+  int32_t end;
+  MONOTONICITY mono;
+  T Smallest(){
+    if (mono == INC) return data->at(begin);
+    else return data->at(end);
+  }
+};
+
+void SortIncDec(const vector<int32_t> inpVec, vector<int32_t>& resultVec){
+  
+}
+
+int main(){
+
+}
