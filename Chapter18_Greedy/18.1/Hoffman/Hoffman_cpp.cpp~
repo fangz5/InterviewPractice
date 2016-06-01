@@ -1,0 +1,15 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(){
+  ifstream in;
+  ofstream out;
+
+  in.open("source.txt");
+  if (!in) {
+    cerr<<"source.txt cannot be opened."<<endl;
+    return 1;
+  }
+}

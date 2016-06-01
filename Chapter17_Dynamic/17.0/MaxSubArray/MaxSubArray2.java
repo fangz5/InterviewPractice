@@ -9,11 +9,11 @@ public class MaxSubArray2{
 	Integer minSum = 0;
 	Integer sum = 0;
 	Integer minIndex = -1;
-	for (Integer i = 0; i < A.size(); i++){
+	for (int i = 0; i < A.size(); i++){
 	    sum += A.get(i);
 	    if (sum < minSum){
 		minSum = sum;
-		minIndex = i + 1;
+		minIndex = i;
 	    }else if (sum - minSum > maxSum){
 		maxSum = sum - minSum;
 		begin = minIndex + 1;
@@ -24,7 +24,7 @@ public class MaxSubArray2{
     
     public static void main(String[] args){
 	ArrayList<Integer> A = new ArrayList<Integer>(
-	    Arrays.asList(2,3,-1,-2,4,-10,-3,5,3));
+	    Arrays.asList(2,3,-1,-2,4,-10,-3,5,0));
 	findMaxSubArray(A);
 	System.out.println(begin+" "+end);
     }
