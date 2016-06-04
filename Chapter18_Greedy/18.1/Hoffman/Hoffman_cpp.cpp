@@ -11,8 +11,8 @@ struct Node{
 };
 
 struct Cmp{
-  bool operator()(const Node* left, const Node* right) const{
-    return left->freq > right->freq;
+  bool operator()(const Node* smaller, const Node* larger) const{
+    return smaller->freq > larger->freq;
   }
 };
 
